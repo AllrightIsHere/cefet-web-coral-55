@@ -5,6 +5,15 @@
 
 :root {
   font-family: "Verdana", sans-serif;
+  --cor-titulo: #e90c0c;
+  --cor-acai: #d027aa;
+  --background: #fff;
+  --recipient-one: #f6f1b2;
+  --recipient-two: #4599b2;
+  --recipient-border: #d3d3d3;
+  --cardapio-border: #aac0ae;
+  --cardapio-background: rgba(255, 255, 255, 0.2);
+  --cor-texto: #333;
 }
 
 h1 {
@@ -12,35 +21,35 @@ h1 {
 }
 
 body {
-  background-color: #fff;
+  background-color: var(--background);
 }
 
 strong {
-  color: #d027aa;
+  color: var(--cor-acai);
 }
 
 #recipiente {
-  background-image: linear-gradient(to bottom, #f6f1b2, #4599b2 80%);
-  border-left: 1px solid #d3d3d3;
-  border-right: 1px solid #d3d3d3;
+  background-image: linear-gradient(to bottom, var(--recipient-one), var(--recipient-two) 80%);
+  border-left: 1px solid var(--recipient-border);
+  border-right: 1px solid var(--recipient-border);
 }
 
 #cardapio {
-  background-color: rgba(255, 255, 255, 0.2);
-  border-top: 1px solid #aac0ae;
-  border-bottom: 1px solid #aac0ae;
-  border-left: 1px solid #aac0ae;
+  background-color: var(--cardapio-background);
+  border-top: 1px solid var(--cardapio-border);
+  border-bottom: 1px solid var(--cardapio-border);
+  border-left: 1px solid var(--cardapio-border);
 }
 
 #cardapio h3 {
   font-size: 18px;
-  color: #333;
+  color: var(--cor-texto);
   margin-top: 30px;
 }
 
 #cardapio article {
   font-size: 14px;
-  color: #333;
+  color: var(--cor-texto);
 }
 
 
@@ -95,14 +104,14 @@ body {
 #cabecalho-pagina h1 {
   margin: 0;
   font-size: 36px;
-  color: #e90c0c;
+  color: var(--cor-titulo);
   font-weight: normal;
 }
 
 #cabecalho-pagina h2 {
   margin: 0;
   font-size: 24px;
-  color: #333;
+  color: var(--cor-texto);
   font-weight: normal;
   text-align: right;
 }
@@ -169,3 +178,16 @@ article {
 /* coloque aqui a media query para sobrescrever o valor
    das custom properties para o modo escuro */
 
+@media (prefers-color-scheme: dark) {
+  :root {
+    --cor-titulo: #f04a47;
+    --cor-acai: #df72d7;
+    --background: #000;
+    --recipient-one: #182d41;
+    --recipient-two: #100a20;
+    --recipient-border: #0c1229;
+    --cardapio-border: #182d41;
+    --cardapio-background: #052a42;
+    --cor-texto: #fff;
+  }
+}
